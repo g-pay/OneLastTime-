@@ -8,9 +8,9 @@ using namespace std;
 
 void dfs(int start, int* arr, int n, int visited[]) {
 
-    //#pragma omp parallel for ordered
+    #pragma omp parallel for ordered
     for(int i = 0; i < n; i++) {
-        //#pragma omp ordered
+        #pragma omp ordered
         if( (*(arr + (start*n) + i) == 1) && (!visited[i]) )
         {
             visited[i] = 1;
